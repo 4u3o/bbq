@@ -1,0 +1,7 @@
+ru:
+  error:
+    zero: ошибок
+    one: ошибка
+    few: ошибки
+    many: ошибок
+    other: ошибки

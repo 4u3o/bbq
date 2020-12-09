@@ -1,29 +1,30 @@
-<%# Паршиал дляотображения формы создания нового события %>
-<%= form_for(@event) do |f| %>
-  <%= render partial: 'partials/form_errors', locals: {model: @event} %>
+<%# Паршиал для отображения формы создания нового события %>
+<div class="col-md-6 my-3">
+  <%= form_for(@event) do |f| %>
+    <%= render partial: 'partials/form_errors', locals: {model: @event} %>
+    <div class="mb-3">
+      <%= f.label :title, class: 'form-label' %>
+      <%= f.text_field :title, class: 'form-control' %>
+    </div>
 
-  <div class="mb-3">
-    <%= f.label :title, class: 'form-label' %>
-    <%= f.text_field :title, class: 'form-control' %>
-  </div>
+    <div class="mb-3">
+      <%= f.label :address, class: 'form-label' %>
+      <%= f.text_field :address, class: 'form-control' %>
+    </div>
 
-  <div class="mb-3">
-    <%= f.label :address, class: 'form-label' %>
-    <%= f.text_field :address, class: 'form-control' %>
-  </div>
+    <div class="mb-3">
+      <%= f.label :datetime, class: 'form-label' %>
+      <p><%= f.datetime_field :datetime, class: 'form-control' %></p>
+    </div>
 
-  <div class="mb-3">
-    <%= f.label :datetime, class: 'form-label' %>
-    <p><%= f.datetime_select :datetime, class: 'form-control' %></p>
-  </div>
+    <div class="mb-3">
+      <%= f.label :description, class: 'form-label' %>
+      <%= f.text_area :description, class: 'form-control' %>
+    </div>
 
-  <div class="mb-3">
-    <%= f.label :description, class: 'form-label' %>
-    <%= f.text_area :description, class: 'form-control' %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit 'Сохранить', class: 'btn btn-primary' %>
-    или <%= link_to 'вернуться', :back %>
-  </div>
-<% end %>
+    <div class="actions mb-3">
+      <%= f.submit 'Сохранить', class: 'btn btn-primary' %>
+      или <%= link_to 'вернуться', :back, class: 'text-decoration-none' %>
+    </div>
+  <% end %>
+</div>
