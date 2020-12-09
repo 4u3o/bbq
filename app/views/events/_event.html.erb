@@ -8,9 +8,8 @@
     <div class="event-info-inner">
       <div class="card-body">
         <div class="event-description">
-          <h3><%= link_to event.title, event_path(event) %></h3>
-<!--          locale: :en фиксит ошибку на хероку, свзяанную с локализацией, временно-->
-          <h3><small><%= l(event.datetime, format: :long, locale: :en) %></small></h3>
+          <h3 class="text-break"><%= link_to event.title, event_path(event) %></h3>
+          <h3><small><%= l(event.datetime, format: :short) %></small></h3>
           <div class="buffer-both"><%= event.address %></div>
         </div>
       </div>

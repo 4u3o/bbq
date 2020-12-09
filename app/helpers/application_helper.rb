@@ -14,7 +14,7 @@ module ApplicationHelper
       next unless ALERT_TYPES.include?(type)
 
       tag_options = {
-        class: "alert alert-#{type} alert-dismissible fade show"
+        class: "alert alert-#{type} alert-dismissible fade show col-md-6 my-3"
       }.merge(options)
 
       close_button = content_tag(:button, '', type: "button", class: "btn-close", "data-dismiss" => "alert", 'area-label' => 'Close')
