@@ -27,6 +27,9 @@ ru:
       destroyed: Вы удалили мероприятие :(
     users:
       updated: Вы обновили свой профиль
+  views:
+    events:
+      show: Точно удалить это событие?
   app:
     name: Шашлыки
     company: Хороший программист
