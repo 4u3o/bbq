@@ -1,35 +1,22 @@
 <div class="col-md-6 my-3">
-  <h2>Изменить пароль</h2>
+  <h2><%= "#{t('app.change')} #{t('activerecord.attributes.user.password').downcase}" %></h2>
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-    <%= render partial: 'partials/form_errors', locals: {model: resource} %>
+  <%= simple_form_for resource, as: resource_name, url: registration_path(resource_name),
+                      html: {multipart: true} do |f| %>
+    <%= f.error_notification %>
 
-    <div class="mb-3">
-      <%= f.label :current_password, class: 'form-label' %> <i class="form-text">(чтобы подтвердить изменения)</i><br />
-      <%= f.password_field :current_password, autocomplete: "current-password", class: 'form-control' %>
-    </div>
+    <%= f.input :current_password %>
+    <%= f.input :password, label: t('activerecord.attributes.user.new_password') %>
+    <%= f.input :password_confirmation %>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <div>Ожидаем подтверждение для: <%= resource.unconfirmed_email %></div>
-    <% end %>
-
-    <div class="mb-3">
-      <%= f.label :password, 'Новый пароль', class: 'form-label' %>
-      <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
-      <% if @minimum_password_length %>
-        <em class="form-text"><%= @minimum_password_length %> знаков минимум</em>
-      <% end %>
-    </div>
-
-    <div class="mb-3">
-      <%= f.label :password_confirmation, class: 'form-label' %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' %>
-    </div>
-
-    <div class="actions mb-3">
-      <%= f.submit "Изменить", class: 'btn btn-primary' %> или <%= link_to "вернуться", :back, class: 'text-decoration-none' %>
-    </div>
+    <%= f.button :submit, t('app.change'), class: 'btn-primary' %> или
+    <%= link_to t('app.back'), :back, class: 'text-decoration-none' %>
   <% end %>
 
-  <p><%= button_to "Удалить аккаунт", registration_path(resource_name), data: { confirm: "Вы уверены?" }, method: :delete, class: 'btn btn-outline-danger' %></p>
+  <p>
+    <%= button_to "#{t('app.delete')} #{t('app.profile').downcase}",
+                  registration_path(resource_name),
+                  data: { confirm: t('app.confirm') },
+                  method: :delete, class: 'btn btn-outline-danger' %>
+  </p>
 </div>

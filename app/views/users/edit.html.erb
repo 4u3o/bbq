@@ -1,11 +1,12 @@
-<h1>Редактирование профиля</h1>
+<h1><%= t('.profile') %></h1>
 
 <div class="row">
   <div class="col-md-6 buffer-top">
     <%= render 'form' %>
 
     <p class="buffer-top">
-      <%= link_to 'Сменить пароль', edit_user_registration_path, class: 'text-decoration-none' %>
+      <%= link_to "#{t('app.change')} #{t('activerecord.attributes.user.password').downcase}",
+                  edit_user_registration_path, class: 'text-decoration-none' %>
     </p>
   </div>
 </div>

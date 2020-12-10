@@ -38,3 +38,7 @@
 .thumbnail-inner {
   padding: 20px 4px 4px;
 }
+
+abbr[title], accronym[data-original-title]{
+  text-decoration: none;
+}

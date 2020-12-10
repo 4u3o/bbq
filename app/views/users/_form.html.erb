@@ -1,18 +1,9 @@
-<%= form_for @user, html: {multipart: true} do |f| %>
-  <%= render partial: 'partials/form_errors', locals: {model: @user} %>
+<%= simple_form_for @user, html: {multipart: true} do |f| %>
+  <%= f.error_notification %>
 
-  <div class="mb-3">
-    <%= f.label :name, class: 'form-label' %>
-    <%= f.text_field :name, class: 'form-control' %>
-  </div>
+  <%= f.input :name %>
+  <%= f.input :email, input_html: { autocomplete: 'email' } %>
 
-  <div class="mb-3">
-    <%= f.label :email, class: 'form-label' %>
-    <%= f.text_field :email, class: 'form-control' %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit 'Сохранить', class: 'btn btn-primary' %>
-    или <%= link_to 'вернуться', :back, class: 'text-decoration-none' %>
-  </div>
+  <%= f.button :submit, t('app.save'), class: 'btn-primary' %> или
+  <%= link_to t('app.back'), :back, class: 'text-decoration-none' %>
 <% end %>

@@ -5,6 +5,7 @@ ru:
     few: ошибки
     many: ошибок
     other: ошибки
+
   activerecord:
     models:
       user: Пользователь
@@ -14,22 +15,57 @@ ru:
         email: Email
         name: Имя
         password: Пароль
+        new_password: Новый пароль
         password_confirmation: Подтверждение пароля
       event:
         title: Название
         address: Место проведения
         datetime: Дата и время
         description: Описание
-  controllers:
-    events:
-      created: Вы создали новое мероприятие
-      updated: Вы обновили мероприятие
-      destroyed: Вы удалили мероприятие :(
-    users:
-      updated: Вы обновили свой профиль
-  views:
-    events:
-      show: Точно удалить это событие?
+
+  events:
+    new:
+      one: Новое событие
+    index:
+      many: События
+    create:
+      success: Вы создали новое мероприятие
+    edit:
+      one: Редактировать событие
+    update:
+      success: Вы обновили мероприятие
+    destroy:
+      success: Вы удалили мероприятие :(
+    show:
+      confirm: Точно удалить это событие?
+
+  users:
+    update:
+      success: Вы обновили свой профиль
+    edit:
+      profile: Редактирование профиля
+    show:
+      organized_by: "Организовал:"
+      empty: Пользователь пока не организовал ни одного события
+
+  devise:
+    registrations:
+      new:
+        signup: Зарегистрироваться
+    sessions:
+      new:
+        signin: Войти
+    shared:
+      links:
+        forget: Забыли пароль?
+
   app:
     name: Шашлыки
     company: Хороший программист
+    profile: Профиль
+    delete: Удалить
+    change: Изменить
+    signout: Выйти
+    back: вернуться
+    save: Сохранить
+    confirm: Вы уверены?

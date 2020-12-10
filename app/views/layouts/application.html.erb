@@ -12,20 +12,24 @@
   </head>
 
   <body>
-    <div class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+    <div class="navbar sticky-top navbar-expand-md navbar-light bg-light">
       <div class="container">
         <%= link_to t('app.name'), root_path, class: 'navbar-brand' %>
-
-        <div class="collapse navbar-collapse">
-          <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+        <button class="navbar-toggler" type="button"
+                data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
             <% if user_signed_in? %>
-              <li class="nav-item"><%= link_to 'Профиль', current_user, class: 'nav-link' %></li>
-              <li class="nav-item"><%= link_to 'Выйти', destroy_user_session_path,
+              <li class="nav-item"><%= link_to t('app.profile'), current_user, class: 'nav-link' %></li>
+              <li class="nav-item"><%= link_to t('app.signout'), destroy_user_session_path,
                               method: :delete,
                               class: 'nav-link' %></li>
             <% else %>
-              <li class="nav-item"><%= link_to 'Войти', new_user_session_path, class: 'nav-link' %></li>
-              <li class="nav-item"><%= link_to 'Зарегистрироваться',
+              <li class="nav-item"><%= link_to t('devise.sessions.new.signin'), new_user_session_path, class: 'nav-link' %></li>
+              <li class="nav-item"><%= link_to t('devise.registrations.new.signup'),
                               new_user_registration_path,
                               class: 'nav-link' %></li>
             <% end %>
@@ -41,12 +45,12 @@
           <%= yield %>
         </div>
         <div class="col-lg-3">
-        </div><!--/span-->
-      </div><!--/row-->
+        </div>
+      </div>
 
       <footer class="fixed-bottom">
         <div class="container">
-          <p>&copy; <%= t('app.company') %> 2020</p>
+          <p>&copy; <%= t('app.company') %> <%= Time.now.year %></p>
         </div>
       </footer>
     </div>

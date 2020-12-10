@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   def update
     if @user.update(user_params)
-      redirect_to @user, notice: I18n.t('controllers.users.updated')
+      redirect_to @user, notice: t('.success')
     else
       render :edit
     end
