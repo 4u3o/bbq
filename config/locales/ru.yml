@@ -43,7 +43,7 @@ ru:
     update:
       success: Вы обновили свой профиль
     edit:
-      profile: Редактирование профиля
+      profile: Редактировать профиль
     show:
       organized_by: "Организовал:"
       empty: Пользователь пока не организовал ни одного события
@@ -55,9 +55,10 @@ ru:
     sessions:
       new:
         signin: Войти
-    shared:
-      links:
+    passwords:
+      new:
         forget: Забыли пароль?
+        instructions: Получить инструкцию по восстановлению пароля
 
   app:
     name: Шашлыки
