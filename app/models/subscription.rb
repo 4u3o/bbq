@@ -32,6 +32,6 @@ class Subscription < ApplicationRecord
   # Подумал, что если модели связаны, то могут знать друг о друге
   def cannot_subscribe_with_presented_email
     errors.add(:user_email, :email_already_exist) if
-      User.where(email: user_email).present?
+      User.exists?(email: user_email)
   end
 end
