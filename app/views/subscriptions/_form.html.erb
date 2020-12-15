@@ -1,0 +1,12 @@
+<%= simple_form_for [@event, subscription] do |f| %>
+  <div class="form-inputs">
+    <% unless user_signed_in? %>
+      <%= f.input :user_name %>
+      <%= f.input :user_email %>
+    <% end %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, t('.subscribe'), class: 'btn-primary' %>
+  </div>
+<% end %>

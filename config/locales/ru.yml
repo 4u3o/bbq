@@ -10,6 +10,8 @@ ru:
     models:
       user: Пользователь
       event: Событие
+      comment: Комментарий
+      subscription: Подписка
     attributes:
       user:
         email: Email
@@ -22,6 +24,12 @@ ru:
         address: Место проведения
         datetime: Дата и время
         description: Описание
+      subscription:
+        user_name: Имя
+        user_email: Email
+      comment:
+        user_name: Имя
+        body: Сообщение
 
   events:
     new:
@@ -59,6 +67,22 @@ ru:
       new:
         forget: Забыли пароль?
         instructions: Получить инструкцию по восстановлению пароля
+
+  comments:
+    create:
+      success: Ваш комментарий добавлен
+      error: Ошибка с комментарием
+    destroy:
+      success: Комментарий удален
+
+  subscriptions:
+    create:
+      success: Вы подписаны на это событие
+      error: Подписка/отписка не сработала
+    form:
+      subscribe: Подписаться
+    destroy:
+      success: Участник отписан
 
   app:
     name: Шашлыки

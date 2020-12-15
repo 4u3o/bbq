@@ -1,4 +1,10 @@
 /* Buffers */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .buffer-top {
   margin-top: 20px;
 }

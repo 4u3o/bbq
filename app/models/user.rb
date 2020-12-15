@@ -3,8 +3,19 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :events, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :subscriptions, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 35 }
-  # Добавил валидацию для того, чтобы simple_form подхватил required
+  # Добавил валидацию чтобы simple_form подхватил required
   validates :email, presence: true, length: { maximum: 255 }
+
+  after_commit :link_subscriptions, on: :create
+
+  private
+
+  def link_subscriptions
+    Subscription.where(user_id: nil, user_email: self.email)
+                .update_all(user_id: self.id)
+  end
 end
