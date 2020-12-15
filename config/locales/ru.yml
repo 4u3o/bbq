@@ -94,3 +94,6 @@ ru:
     back: вернуться
     save: Сохранить
     confirm: Вы уверены?
+    host: "Зовет:"
+    subscribers: "Пойдут:"
+    subscribe: "Я пойду:"
