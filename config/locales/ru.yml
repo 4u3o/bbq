@@ -34,7 +34,10 @@ ru:
     errors:
       models:
         subscription:
-          self_subscribe: совпадает с Email автора события
+          attributes:
+            user_email:
+              self_subscribe: совпадает с Email автора события
+              email_already_exist: уже занят
 
   events:
     new:

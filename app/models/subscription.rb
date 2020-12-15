@@ -13,7 +13,7 @@ class Subscription < ApplicationRecord
   validates :user_email,
             uniqueness: {scope: :event_id},
             unless: -> { user.present? }
-  validate :cannot_self_subscribe
+  validate :cannot_self_subscribe, :cannot_subscribe_with_presented_email
 
   def user_name
     return user.name if user.present?
@@ -27,5 +27,11 @@ class Subscription < ApplicationRecord
 
   def cannot_self_subscribe
     errors.add(:user_email, :self_subscribe) if event.user.email == user_email
+  end
+
+  # Подумал, что если модели связаны, то могут знать друг о друге
+  def cannot_subscribe_with_presented_email
+    errors.add(:user_email, :email_already_exist) if
+      User.where(email: user_email).present?
   end
 end
