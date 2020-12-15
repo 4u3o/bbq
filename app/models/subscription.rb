@@ -26,10 +26,6 @@ class Subscription < ApplicationRecord
   end
 
   def cannot_self_subscribe
-    if user.present? && event.user == user || event.user.email == user_email
-      # Похоже здесь нельзя использовать локаль
-      # undefined method `t' for #<Subscription:...>
-      errors.add(:user_email, 'совпадает с Email автора события')
-    end
+    errors.add(:user_email, :self_subscribe) if event.user.email == user_email
   end
 end
