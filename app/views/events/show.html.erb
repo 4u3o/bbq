@@ -54,7 +54,7 @@
         </p>
       </div>
     </div>
-    <% unless current_user_can_edit?(@event) %>
+    <% unless current_user_can_edit?(@event) || @event.subscribers.include?(current_user) %>
       <div class="event-subscription-form">
         <h4><%= t('app.subscribe') %></h4>
         <div>
