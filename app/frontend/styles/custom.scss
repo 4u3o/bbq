@@ -19,10 +19,13 @@ body {
 }
 
 /* Avatars for users & events */
-.img-icon, .img-icon-small {
-  height: 50px;
+.img-icon,  {
   width: auto;
   border-radius: 50%;
+}
+
+.img-icon-small {
+  height: 20px;
 }
 
 /* Thumbnails for events/index */

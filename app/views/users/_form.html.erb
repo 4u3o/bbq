@@ -1,8 +1,13 @@
 <%= simple_form_for @user, html: {multipart: true} do |f| %>
   <%= f.error_notification %>
 
+  <p>
+    <%= image_tag @user.avatar.thumb.url, size: 100, alt: t('activerecord.attributes.user.avatar') if @user.avatar? %>
+  </p>
+
   <%= f.input :name %>
   <%= f.input :email, input_html: { autocomplete: 'email' } %>
+  <%= f.input :avatar, as: :file %>
 
   <%= f.button :submit, t('app.save'), class: 'btn-primary' %> или
   <%= link_to t('app.back'), :back, class: 'text-decoration-none' %>

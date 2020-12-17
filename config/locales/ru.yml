@@ -19,6 +19,7 @@ ru:
         password: Пароль
         new_password: Новый пароль
         password_confirmation: Подтверждение пароля
+        avatar: Аватар
       event:
         title: Название
         address: Место проведения

@@ -11,6 +11,8 @@ gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'devise-i18n', '~> 1.9', '>= 1.9.2'
 gem 'rails-i18n', '~> 6.0.0'
 gem 'simple_form', '~> 5.0', '>= 5.0.3'
+gem 'carrierwave', '~> 2.0'
+gem "mini_magick"
 
 group :development, :test do
   gem 'pry-rails'
