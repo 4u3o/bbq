@@ -13,6 +13,7 @@ gem 'rails-i18n', '~> 6.0.0'
 gem 'simple_form', '~> 5.0', '>= 5.0.3'
 gem 'carrierwave', '~> 2.0'
 gem "mini_magick"
+gem 'fog-aws'
 
 group :development, :test do
   gem 'pry-rails'
