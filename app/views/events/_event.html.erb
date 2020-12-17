@@ -3,7 +3,7 @@
   <div class="thumbnail text-left mb-3">
 
     <%= content_tag 'div', '', class: 'event-background',
-      style: "background-image: url(#{asset_pack_path('media/images/event_thumb.jpg')})" %>
+      style: "background-image: url(#{event_photo(event)})" %>
 
     <div class="event-info-inner">
       <div class="card-body">
@@ -11,6 +11,11 @@
           <h3 class="text-break"><%= link_to event.title, event_path(event) %></h3>
           <h3><small><%= l(event.datetime, format: :short) %></small></h3>
           <div class="buffer-both"><%= event.address %></div>
+        </div>
+        <div>
+          <% event.visitors.each do |user| %>
+            <%= image_tag user_avatar_thumb(user), class: 'img-icon-small', title: user.name %>
+          <% end %>
         </div>
       </div>
     </div>

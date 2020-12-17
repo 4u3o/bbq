@@ -12,6 +12,7 @@ ru:
       event: Событие
       comment: Комментарий
       subscription: Подписка
+      photo: Фотография
     attributes:
       user:
         email: Email
@@ -31,6 +32,8 @@ ru:
       comment:
         user_name: Имя
         body: Сообщение
+      photo:
+        photo: Фотография
 
     errors:
       models:
@@ -92,6 +95,13 @@ ru:
       subscribe: Подписаться
     destroy:
       success: Участник отписан
+
+  photos:
+    create:
+      success: Вы добавили фотографию к событию
+      error: Что-то не так с фоткой
+    destroy:
+      success: Вы удалили фотку
 
   app:
     name: Шашлыки
