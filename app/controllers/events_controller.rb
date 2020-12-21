@@ -3,28 +3,23 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show]
   before_action :set_current_user_event, only: [:edit, :update, :destroy]
 
-  # GET /events
   def index
     @events = Event.all
   end
 
-  # GET /events/1
   def show
     @new_comment = @event.comments.build(params[:comment])
     @new_subscription = @event.subscriptions.build(params[:subscription])
     @new_photo = @event.photos.build(params[:photo])
   end
 
-  # GET /events/new
   def new
     @event = current_user.events.build
   end
 
-  # GET /events/1/edit
   def edit
   end
 
-  # POST /events
   def create
     @event = current_user.events.build(event_params)
 
@@ -35,7 +30,6 @@ class EventsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /events/1
   def update
     if @event.update(event_params)
       redirect_to event_path(@event), notice: t('.success')
@@ -44,7 +38,6 @@ class EventsController < ApplicationController
     end
   end
 
-  # DELETE /events/1
   def destroy
     @event.destroy
     redirect_to events_path, notice: t('.success')

@@ -43,6 +43,24 @@ ru:
               self_subscribe: совпадает с Email автора события
               email_already_exist: уже занят
 
+  event_mailer:
+    subscription:
+      subject: 'Новая подписка на %{event}'
+      title: 'Новая подписка'
+      name: 'Имя'
+      email: 'Email'
+      author: 'Автор'
+      event: 'Событие'
+      datetime: 'Состоится'
+      owner: 'Организатор'
+    comment:
+      subject: 'Новый комментарий @%{event}'
+      title: 'Новый комментарий'
+      author: 'Автор'
+      event: 'Событие'
+      datetime: 'Состоится'
+      owner: 'Организатор'
+
   events:
     new:
       one: Новое событие
@@ -79,6 +97,14 @@ ru:
       new:
         forget: Забыли пароль?
         instructions: Получить инструкцию по восстановлению пароля
+    mailer:
+      reset_password_instructions:
+        subject: Инструкции по восстановлению пароля
+        greeting: "Здравствуйте %{recipient}!"
+        instruction: Была запрошена ссылка для изменения вашего пароль, она находится ниже.
+        instruction_2: Если это были не вы - проигнорируйте это сообщение.
+        instruction_3: Ваш пароль не будет изменен до тех пор пока вы не измените его по ссылке выше.
+        action: Изменить мой пароль
 
   comments:
     create:
