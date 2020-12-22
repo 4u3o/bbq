@@ -15,8 +15,8 @@ class EventMailer < ApplicationMailer
   end
 
   def comment(event, comment, email)
-    @comment = comment
     @event = event
+    @comment = comment
 
     mail to: email, subject: t('.subject', event: event.title)
   end

@@ -7,7 +7,15 @@ class CommentsController < ApplicationController
     @new_comment.user = current_user
 
     if @new_comment.save
-      notify_subscribers(@event, @new_comment)
+      emails =
+        current_user.present? ?
+          @event.visitors_emails - [@new_comment.user.email] :
+          @event.visitors_emails
+
+      emails.each do |mail|
+        EventMailer.comment(@event, @new_comment, mail).deliver_now
+      end
+
       redirect_to event_path(@event), notice: t('.success')
     else
       render 'events/show', alert: t('.error')
