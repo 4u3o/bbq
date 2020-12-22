@@ -26,6 +26,7 @@ ru:
         address: Место проведения
         datetime: Дата и время
         description: Описание
+        pincode: Пинкод
       subscription:
         user_name: Имя
         user_email: Email
@@ -54,9 +55,16 @@ ru:
       datetime: 'Состоится'
       owner: 'Организатор'
     comment:
-      subject: 'Новый комментарий @%{event}'
+      subject: 'Новый комментарий @ %{event}'
       title: 'Новый комментарий'
       author: 'Автор'
+      event: 'Событие'
+      datetime: 'Состоится'
+      owner: 'Организатор'
+    photo:
+      subject: 'Новая фотография @ %{event}'
+      title: 'Новая фотография'
+      author: 'Добавил'
       event: 'Событие'
       datetime: 'Состоится'
       owner: 'Организатор'
@@ -76,6 +84,9 @@ ru:
       success: Вы удалили мероприятие :(
     show:
       confirm: Точно удалить это событие?
+      wrong_pincode: Неверный пин-код!
+    password_form:
+      title: Доступ только по пин-коду
 
   users:
     update:
@@ -137,6 +148,7 @@ ru:
     change: Изменить
     signout: Выйти
     back: вернуться
+    to_index: На главную
     save: Сохранить
     confirm: Вы уверены?
     host: "Зовет:"

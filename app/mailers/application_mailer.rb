@@ -1,5 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'support@magabbq.com'
+  default from: 'magabbq@goodprogrammer.ru'
   layout 'mailer'
 end
 

@@ -8,6 +8,7 @@ class PhotosController < ApplicationController
     @new_photo.user = current_user
 
     if @new_photo.save
+      notify_subscribers(@event, @new_photo)
       redirect_to event_path(@event), notice: t('.success')
     else
       render 'events/show', alert: I18n.t('error')

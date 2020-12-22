@@ -29,6 +29,8 @@ ru:
     # prompts:
     #   defaults:
     #     age: 'Select your age'
+      event:
+        pincode: 3 цифры
     placeholders:
       comment:
         body: Сообщение

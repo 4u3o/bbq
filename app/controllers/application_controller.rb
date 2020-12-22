@@ -21,4 +21,13 @@ class ApplicationController < ActionController::Base
       keys: [:email, :name, :password, :password_confirmation]
     )
   end
+
+  def notify_subscribers(event, update)
+    all_emails =
+      (event.subscriptions.map(&:user_email) + [event.user.email] - [update.user.email]).uniq
+
+    all_emails.each do |mail|
+      EventMailer.comment(event, update, mail).deliver_now
+    end
+  end
 end

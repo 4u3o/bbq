@@ -10,8 +10,13 @@ class Event < ApplicationRecord
   validates :address, presence: true
   validates :datetime, presence: true
   validates :user, presence: true
+  validates :pincode, length: { is: 3 }, format: /\A\p{Digit}{3}\z/, if: -> { pincode.present? }
 
   def visitors
     (subscribers + [user]).uniq
+  end
+
+  def pincode_valid?(pin2chek)
+    pincode == pin2chek
   end
 end
