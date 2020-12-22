@@ -29,7 +29,8 @@ module Bbq
 
     config.i18n.default_locale = :ru
     config.i18n.locale = :en
-
     config.i18n.fallbacks = [:en]
+
+    # config.action_mailer.delivery_method = :mailjet
   end
 end

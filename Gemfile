@@ -14,6 +14,7 @@ gem 'simple_form', '~> 5.0', '>= 5.0.3'
 gem 'carrierwave', '~> 2.0'
 gem "mini_magick"
 gem 'fog-aws'
+gem "mailjet"
 
 group :development, :test do
   gem 'pry-rails'
