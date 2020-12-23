@@ -51,3 +51,8 @@ body {
 abbr[title], accronym[data-original-title]{
   text-decoration: none;
 }
+
+#map {
+  width: 100%;
+  min-height: 200px;
+}
