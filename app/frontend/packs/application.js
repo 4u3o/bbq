@@ -1,5 +1,4 @@
 require("@rails/ujs").start()
-// require('jquery')
 
 import 'bootstrap/dist/js/bootstrap'
 import 'jquery/src/jquery'
@@ -11,4 +10,3 @@ import '../scripts/lightbox'
 import '../styles/application'
 
 const images = require.context('../images', true)
-

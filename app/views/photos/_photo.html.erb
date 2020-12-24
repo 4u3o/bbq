@@ -1,4 +1,15 @@
-<% image_title = "Добавил #{render partial: 'users/user', object: photo.user}" %>
+<% delete_btn =
+     if current_user_can_edit?(photo)
+       link_to(
+         fa_icon('trash-o'),
+         event_photo_path(photo.event, photo),
+         method: :delete,
+         data: {confirm: t('app.confirm')}
+       )
+     end
+%>
+
+<% image_title = "#{delete_btn} Добавил #{render partial: 'users/user', object: photo.user}" %>
 
 <%= link_to image_tag(photo.photo.thumb.url), photo.photo.url, data: {
   toggle: 'lightbox', title: image_title, gallery: 'event-photos'
