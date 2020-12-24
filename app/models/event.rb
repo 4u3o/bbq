@@ -12,6 +12,8 @@ class Event < ApplicationRecord
   validates :user, presence: true
   validates :pincode, length: { is: 3 }, format: /\A\p{Digit}{3}\z/, if: -> { pincode.present? }
 
+  validates_datetime :datetime, after: :now
+
   def visitors
     (subscribers + [user]).uniq
   end

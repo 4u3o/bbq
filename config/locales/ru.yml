@@ -5,6 +5,10 @@ ru:
     few: ошибки
     many: ошибок
     other: ошибки
+  errors:
+    messages:
+      invalid_datetime: Проверьте корректно ли указана дата
+      after: Событие должно произойти в будущем
 
   activerecord:
     models:
