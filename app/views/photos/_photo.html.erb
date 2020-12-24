@@ -9,7 +9,7 @@
      end
 %>
 
-<% image_title = "#{delete_btn} Добавил #{render partial: 'users/user', object: photo.user}" %>
+<% image_title = "#{delete_btn} #{t('.added_by')} #{render partial: 'users/user', object: photo.user}" %>
 
 <%= link_to image_tag(photo.photo.thumb.url), photo.photo.url, data: {
   toggle: 'lightbox', title: image_title, gallery: 'event-photos'
