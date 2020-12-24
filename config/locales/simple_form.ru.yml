@@ -34,3 +34,5 @@ ru:
     placeholders:
       comment:
         body: Сообщение
+      event:
+        datetime: дд.мм.гггг чч:мм

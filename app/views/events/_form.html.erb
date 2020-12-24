@@ -6,7 +6,11 @@
     <%= f.input :address %>
 
     <%= f.label :datetime, class: 'form-label' %>
-    <%= f.datetime_field :datetime, class: 'form-control mb-3' %>
+    <%= f.input_field :datetime,
+                      as: :string,
+                      class: 'form-control datepicker-here mb-3',
+                      autocomplete: 'off',
+                      data: { timepicker: true } %>
 
     <%= f.input :description %>
     <%= f.input :pincode %>
