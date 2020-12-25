@@ -15,7 +15,6 @@ gem 'carrierwave', '~> 2.0'
 gem "mini_magick"
 gem 'fog-aws'
 gem "mailjet"
-gem 'validates_timeliness', '~> 5.0.0.beta1'
 
 group :development, :test do
   gem 'pry-rails'

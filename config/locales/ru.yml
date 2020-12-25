@@ -5,10 +5,6 @@ ru:
     few: ошибки
     many: ошибок
     other: ошибки
-  errors:
-    messages:
-      invalid_datetime: Проверьте корректно ли указана дата
-      after: Событие должно произойти в будущем
 
   activerecord:
     models:
@@ -47,6 +43,10 @@ ru:
             user_email:
               self_subscribe: совпадает с Email автора события
               email_already_exist: уже занят
+        event:
+          attributes:
+            datetime:
+              after: не может быть прошедшим
 
   event_mailer:
     subscription:

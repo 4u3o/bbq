@@ -4,17 +4,11 @@
 
     <%= f.input :title %>
     <%= f.input :address %>
-
-    <div class="mb-3 string required form-group-invalid">
-      <%= f.label :datetime, class: 'form-label' %>
-      <%= f.input_field :datetime,
-                        as: :string,
-                        class: 'form-control datepicker-here',
-                        autocomplete: 'off',
-                        data: { timepicker: true } %>
-      <%= f.error :datetime, class: 'invalid-feedback' %>
-    </div>
-
+    <%= f.input :datetime, as: :string,
+                input_html: {
+                  id: 'datepicker',
+                  autocomplete: 'off'
+                } %>
     <%= f.input :description %>
     <%= f.input :pincode %>
 
