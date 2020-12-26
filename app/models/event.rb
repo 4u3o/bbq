@@ -8,7 +8,7 @@ class Event < ApplicationRecord
 
   validates :title, presence: true, length: { maximum: 255 }
   validates :address, presence: true
-  validates :datetime, presence: true, inclusion: { in: (Time.now..), message: :after }
+  validates :datetime, presence: true, inclusion: { in: (Time.now..) }
   validates :user, presence: true
   validates :pincode, length: { is: 3 }, format: /\A\p{Digit}{3}\z/, if: -> { pincode.present? }
 

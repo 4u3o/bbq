@@ -16,6 +16,8 @@ gem "mini_magick"
 gem 'fog-aws'
 gem "mailjet"
 
+gem "letter_opener", group: :development
+
 group :development, :test do
   gem 'pry-rails'
 end
