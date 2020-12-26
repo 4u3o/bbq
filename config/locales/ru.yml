@@ -46,7 +46,7 @@ ru:
         event:
           attributes:
             datetime:
-              after: не может быть прошедшим
+              inclusion: не может быть прошедшим
 
   event_mailer:
     subscription:
